@@ -52,3 +52,11 @@ Quero ser capaz de desenvolver APIs, utilizando técnicas e metodologias para me
 **Pontos fortes:** Relevância para o mercado, foco prático, tecnologias atuais
 
 **Melhorias necessárias:** Definir prazos, estabelecer métricas de progresso, estruturar sequência de aprendizado
+
+
+## Sub-objetivos
+
+1. Quero ser capaz de criar Aplicações java com Spring Boot e Spring Data JPA, utilizando o Maven como gerenciador de dependências. Para isso, vou precisar entender como funciona o Spring Boot e o Spring Data JPA, além de conhecer o Maven.
+2. Quero ser capaz de construir aplicações, seguindo as boas práticas do SOLID, e TDD.garantido que as classes javas estejam coerentes.
+3. Quero ser capaz de usar junit utilizando TDD, para teste de integrações e unitários
+4. Quero ser capaz de melhorar a qualidade do código existente, fazendo refatoração.
