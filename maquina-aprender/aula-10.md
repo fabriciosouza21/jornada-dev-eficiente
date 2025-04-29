@@ -1,3 +1,9 @@
+um bom objetivo de apredizagem  deve ter as ferramentas e condições
+
+- ferramentas (spring)
+- condições (deployar)
+
+
 # Ojetivo de aprendizagem
 
 A ideia é definir quais as ferramentas e tecnologias que quero aprender. E o que eu quero fazer com essas ferramentas e tecnologias.
