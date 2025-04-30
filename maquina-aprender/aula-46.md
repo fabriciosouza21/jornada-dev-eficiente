@@ -1,0 +1,2 @@
+# Repetição espaçada
+

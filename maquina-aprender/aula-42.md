@@ -1,5 +1,7 @@
 # Exemplo
 
+praticas obrigátorios
+
 utilizar o LLM para gerar exemplos de atividades
 
 # 10 Exercícios de Desenvolvimento de APIs com Spring Boot
