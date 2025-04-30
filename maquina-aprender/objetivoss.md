@@ -60,3 +60,15 @@ Quero ser capaz de desenvolver APIs, utilizando técnicas e metodologias para me
 2. Quero ser capaz de construir aplicações, seguindo as boas práticas do SOLID, e TDD.garantido que as classes javas estejam coerentes.
 3. Quero ser capaz de usar junit utilizando TDD, para teste de integrações e unitários
 4. Quero ser capaz de melhorar a qualidade do código existente, fazendo refatoração.
+
+
+
+| # | Exercício | Complexidade | Foco Principal |
+|---|-----------|--------------|----------------|
+| 1 | API REST Básica de Lista de Tarefas | Iniciante | Clean Code, CRUD básico, Testes unitários |
+| 2 | Sistema de Gerenciamento de Biblioteca | Intermediário | TDD, BDD com Cucumber, Validações de negócio |
+| 3 | Sistema de E-commerce com Microserviços | Avançado | Arquitetura de microserviços, Padrões de projeto, CDD |
+| 4 | Refatoração de API Legacy | Intermediário | SOLID, Refatoração, Débito técnico |
+| 5 | API de Análise de Dados em Tempo Real | Avançado | Programação reativa, WebFlux, NoSQL, Processamento de dados |
+
+Essa progressão de complexidade permite que você desenvolva suas habilidades gradualmente, aplicando diferentes técnicas de desenvolvimento de software em cada etapa, desde princípios básicos de Clean Code até arquiteturas mais complexas com microserviços e programação reativa.
