@@ -88,13 +88,15 @@ verificar se é realmente necessário implementar essas camadas.
 
 Aumenta a quantidade de indireções.
 
-## Acoplamento Mental
+## Aula 17 - Acoplamento Mental
 
 quando você criar metodos que são utilizados, mas que possuir um acoplamento mental, por causa de uma implentação de uma biblioteca.
 
 no caso abaixo, dadosBusca, ja considerar que a informação é uma string separada por espaço
 
 podemos ajustar o metodo para ter um demilitador e ficar mais claro o que estamos fazendo.
+
+O acomplamento mental é mais sutil, ele pode ser mais complicado de identificar, pois não algo que está claro no código, mas sim algo que está na cabeça do desenvolvedor.
 
 
 
@@ -118,8 +120,16 @@ class Busca {
 		});
 	}
 }
+```
+
+## Aula 18 - abrace o legado
 
 
+Legado de conhecimento, no lagado vão haver decisões que foram tomadas, e que não são mais válidas, mas que foram tomadas por um motivo.
+
+aprender a tratar código lagado, pode fornerce a habilidade de entender o código, e melhorar a qualidade do código.
+
+aprendar a lidar com o legado.
 
 
 
