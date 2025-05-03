@@ -10,7 +10,7 @@ o melhor teste é que simular o código em produção.
 
 teste de integração, são muito bons para simular o código em produção. Mas o custo de manutenção é tempo de execução é elevado.
 
-quando vamos implementar código temos "um desejo é uma certesa", o desejo é que o código funcione, e a certeza é que vai haver bugs.
+quando vamos implementar código temos "um desejo é uma certeza", o desejo é que o código funcione, e a certeza é que vai haver bugs.
 
 ## Aula 20 - guideline é importante
 
