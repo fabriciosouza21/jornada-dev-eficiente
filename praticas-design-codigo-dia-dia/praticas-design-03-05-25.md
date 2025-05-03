@@ -1,80 +1,3 @@
-# Praticas de Design no Código
-
-02/05/2025
-
-design de código focando em linguagem de programação orientadas a objetos.
-
-
-
-## Direcionamento
-
-### Aula 02 - qualidade não é negociado
-
-Qualidade não é negociável. O Código deve ser feito com o design proprcional a complexidade considerando os conhecimentos que temos no momento da produção.
-
-### Aula 03 - você vai tomar decisões ruins
-
-Vocẽ vai deixa desões ruins pelo caminho, não importa seu nível.
-
-### Aula 04 - fazer o que foi combinado
-
-A prioridade máxima é funcionar de acordo com o caso de uso.
-
-## Praticas
-
-### Aula 05 - implemente fora para dentro
-
-Execute o seu código o mais rápido possível. Priorize implementar de fora para dentro, dessa forma você visualiza o que realmente precisa e usa uma  abordagem mais incremental. O "Fora" aqui pode ser o endpoint que vai receber uma chamada, pode ser seu teste automatizado.
-
-### Aula 06 - implementar fora para dentro
-
-quanto mais detelhada e sua imaginação maior a chance de você conseguir implementar
-
-### Aula 13 - exemplo da implementação
-
-``` java
-
-/**
- * Criar um novo endpoint que vai receber um post
- * Nest endpoint eu preciso receber a pessoa logada que gerar o convite e também o  projeto
- *  	- A pessoa logada vai vir via header
- * 		- O projeto pode via parametro comibnado na  prória url (path variable)
- * - Também preciso receber os dados do convite. Email e dias de expiração
- * - Carregar a pessoa logadaa e verifica se ele existe mesmo
- * - Carregar o projeto e verificar se ele existe mesmo
- * - A pessoa logada precisar ser o dono do projeto
- * - eu crio o nvo convite para aquel email com aquela data de experação
- * - Salvo este convite
- * - precioso manda um email para a pessoa que vai receber o convite
- *  */
-```
-
-### Aula 14 - maximizar a coesão
-
-deixar logica mais proxima possivel do estado. as classes podem manibular o estado dela, vai tornar a classe mais coesa.
-
-A propria classe pode manipular o estado dela.
-
-estou fazendo uma logica sobre o estado, se sim, adicionar a logica na classe.
-
-você ganhar reuso
-
-A classe de request pode ter um metodo que vai retorna uma classe de modelo. toModel
-
-## aula 15
-
-Protegemos as borda do sitemas como se não houvese amanhã
-
-devemos adicinar as validações nas bordas, Objetos de Request, Controllers
-
-
-Adicionar as validações no DTO, use e abuse do Validator do jakata.
-
-realizer sempre a validação antes de fazer a chamada realmente fazer a execução do serviço.
-
-sempre adicionar validações e retorna o status.
-
-
 # praticas de design no código
 
 **03/05/2025**
@@ -173,7 +96,7 @@ public class User {
 
 ```
 
-## Aula 20 - utilizer o que ta pronto
+## Aula 21 - utilizer o que ta pronto
 
 **Usamos tudo que conhecemos que está pronto. Só fazemos código do zero se for estritametne necessário.**
 
@@ -208,4 +131,85 @@ public class User {
 }
 
 ```
-##
+## Aula 22 - cdd
+
+**Utilizamos o CDD Para facilitar o processo de medição e valiação de legibilidade.**
+
+o CDD é reguar que mesura a complexidade do código, olhando o pesso cognitivo.
+
+O tornar o processo mais automatizado.
+
+é importante estabelecer um limite.
+
+### Definição de pesso cognitivo
+
+1. acoplamento com classe especificas de projeto - 1 icp
+2. conicionais - 1 icp
+3. blocos extras de código - 1 icp
+
+
+## aula 23 - praticas cdd
+
+**Só alteramos estado de referências que criamos. Não mexemos nos objetos alheios. A não ser que esse objeto seja criado para isso.**
+
+
+Controle muito fino para alteração do estado do sistema.
+
+é importante sempre manter as validações, evite fazer acoplamento mental. então sempre faça validações. nunca mantenha um objeto com o estado inválido.
+
+no metodo adicionar pessoa, receber o convite ao invez da pessoa, pois somente adicionar pessoas que estão no convite. asssim obrigamos a passar o convite.
+
+usar o this duas 2vezes na mesma linha é um sinal de um smell que você ta alterando o estado de um objeto que não é seu.
+
+no caso abaixo o convite alterar o estado de conta.
+
+para resolver isso, no ponto em esse metodo é chamado substiuir para que a propria conta adicione a pessoa. Ou seja, o propria conta vai adicionar alterar o estado dela.
+
+
+
+``` java
+// Entidade Convite
+public void transferePraConta(){
+	this.convite.getConta().adicionaPessoa(this);
+}
+```
+
+``` java
+
+// Entitdade Conta
+
+public void adicionaPessoa( Convite conviteAceito) {
+	PessoaUsuaria novaPessoa = conviteAceito.getPessoa();
+
+	Assert.isTrue(!this.pessoas.contains(novaPessoa), "pessoa já existe");
+
+	this.pessoas.add(novaPessoa);
+}
+```
+
+## Aula 24 - praticas cdd
+
+**Teste automatizados devem ser derivados de maneira pragmática através das técnicas já conhecidas. Só depois de derivar casos padrões, usamos nossa criatividade para buscar extrapolar.**
+
+criar o base padrões
+
+no caso abaixo, seria um alterando cada if. seguir os fluxos de execução.
+
+``` java
+
+public class DiscountCalculator {
+	public double calculateDiscount(double salary, intyearsWorked, boolean hasMetTarget){
+		if(yearsWorked > 10 && hasMetTarget){
+			return salary * 0.15; //15%
+		}else if(yearsWorked > 5 && hasMetTarget){
+			return salary * 0.10; //10%
+		}else if(yearsWorked > 5 || hasMetTarget){
+			return salary * 0.05; //5%
+		}else {
+			return 0;
+		}
+	}
+}
+
+```
+
