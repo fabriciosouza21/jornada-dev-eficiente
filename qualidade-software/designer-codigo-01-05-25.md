@@ -43,8 +43,6 @@ limite de 40 ICP
 
 Mais importante do que entende metodos é importante entender que estamos buscando mecanismo para melhorar a qualidade do código e evolução do código.
 
-principio do aberto e fechado, encontre meus de escreve o código, que não precise modificar o código existente.
-
 em liguagem de programção como java, utilizamos interfaces, as classes usuario a classe abstrata e um serviço seria responsavel por injectar a implementação correta.
 
 partes do seu software ja precisar saber se vai ser extendidos via extensão ou via modificação.
@@ -53,7 +51,7 @@ Nem todas as features precisam ser extensíveis, generalizar tornar o código ma
 
 
 
-## Aula 14 - me acoclobo a frameworks ou não
+## Aula 14 - me acoplamento a frameworks ou não
 
 frameworks
 
