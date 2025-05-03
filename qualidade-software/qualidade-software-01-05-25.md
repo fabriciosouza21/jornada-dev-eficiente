@@ -114,7 +114,7 @@ melhorar no pre-work, pelo vies do negocio, triturar o requisito, trabalhar de m
 ### Eficiência
 
 - cada vez mais rapido
-- com a mesmo qualidade ou melhor
+- com a mesma qualidade ou melhor
 - com menos gastos energitico
 
 Antes de começar a implementa é importante fazer um pre-work, fazer um checklist, em um formato para desenvolvimento, que vai ser um passo a passo pensando em código mesmo.
