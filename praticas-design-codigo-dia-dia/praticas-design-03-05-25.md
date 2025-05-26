@@ -1,36 +1,35 @@
-# praticas de design no código
+# Práticas de design no código
 
 **03/05/2025**
 
-## Aula 16 não retorne null
+## Aula 16 - Não retorne null
 
-Utilizar Optional, apartir do fluxo para evitar a validação de nulidade em varios pontos do código, precisamos ter confiaça que o objeto não é nulo.
+Utilizar Optional, a partir do fluxo para evitar a validação de nulidade em vários pontos do código, precisamos ter confiança que o objeto não é nulo.
 
-se for retorna a referencia retorne ou retorne um abstração que faça sentido no caso do java temos o Optional.
+Se for retornar a referência, retorne ou retorne uma abstração que faça sentido. No caso do Java, temos o Optional.
 
-## Aula 17 - não Ligamos parametros com entidades
+## Aula 17 - Não ligamos parâmetros com entidades
 
-Separamos as Bordas externas do sistema do seu núcleo. Não ligamos parâmetors de requisição externa com objetos de dominio diretamente assim como não srializamos objetos de domínio para eresposta de API.
+Separamos as bordas externas do sistema do seu núcleo. Não ligamos parâmetros de requisição externa com objetos de domínio diretamente, assim como não serializamos objetos de domínio para resposta de API.
 
-È importante manter separado os atributos de requisição das classes de dominio.
+É importante manter separados os atributos de requisição das classes de domínio.
 
-No geral a classe de dominio não precisar saber do DTO, pois caso houve-se varios dto que utilizam a mesma classe, a classe de dominio ficaria muito inchada com metodos muitos especificos de cada borda.
+No geral, a classe de domínio não precisa saber do DTO, pois caso houvesse vários DTOs que utilizam a mesma classe, a classe de domínio ficaria muito inchada com métodos muito específicos de cada borda.
 
-A forma mais comum de fazer isso é fazer um construtor no dto que recebe a classe de dominio.
-
-
-## Aula 18 - pratica informação obrigatoria construtor
+A forma mais comum de fazer isso é criar um construtor no DTO que recebe a classe de domínio.
 
 
-**Usamos o contrutor para criar o objeto no estado Válido**
-
-O código deve ser o mais restrito possivel, se um parametro é obrigatorio, o código deve induzir o desenvolvedor a passar o parametro obrigatorio.
-
-se você estiver muito construtores, você pode usar uma fabrica para criar objetos de uma forma mais semântica.
+## Aula 18 - Prática: informação obrigatória no construtor
 
 
-``` java
+**Usamos o construtor para criar o objeto no estado válido**
 
+O código deve ser o mais restrito possível. Se um parâmetro é obrigatório, o código deve induzir o desenvolvedor a passar o parâmetro obrigatório.
+
+Se você tiver muitos construtores, você pode usar uma fábrica para criar objetos de uma forma mais semântica.
+
+
+```java
 public class User {
 	private final String name;
 	private final String email;
@@ -52,22 +51,20 @@ public class User {
 		return password;
 	}
 }
-
 ```
 
-## Aula 19 - deixe pistas quando compilação não resolver
+## Aula 19 - Deixe pistas quando compilação não resolver
 
 **Deixamos pistas que facilitem o uso do código onde não conseguimos resolver com compilação.**
 
-podemos adicionar anotações no construtor para indicar que o parametro é obrigatorio, ou podemos usar o @NotNull do jakarta. por mais não haja uma validação no construtor, o compilador não vai conseguir validar isso, mas o desenvolvedor vai ter uma pista de que aquele parametro é obrigatorio. no caso do construto em alguns caso aonde somos obrigados a criar um construtor vazio, podemos anotar o construtor vazio com o @Deprecated, assim o desenvolvedor vai saber que aquele construtor não deve ser usado.
+Podemos adicionar anotações no construtor para indicar que o parâmetro é obrigatório, ou podemos usar o @NotNull do Jakarta. Por mais que não haja uma validação no construtor, o compilador não vai conseguir validar isso, mas o desenvolvedor vai ter uma pista de que aquele parâmetro é obrigatório. No caso do construtor, em alguns casos onde somos obrigados a criar um construtor vazio, podemos anotar o construtor vazio com o @Deprecated, assim o desenvolvedor vai saber que aquele construtor não deve ser usado.
 
 
-comentarios são uma forma de deixar pistas, e de cuidado com as proximas manutenções.
+Comentários são uma forma de deixar pistas e de cuidado com as próximas manutenções.
 
-David Parnas, fala da importancia da documentação.
+David Parnas fala da importância da documentação.
 
-``` java
-
+```java
 public class User {
 	private final String name;
 	private final String email;
@@ -93,17 +90,15 @@ public class User {
 		return password;
 	}
 }
-
 ```
 
-## Aula 21 - utilizer o que ta pronto
+## Aula 21 - Utilize o que está pronto
 
-**Usamos tudo que conhecemos que está pronto. Só fazemos código do zero se for estritametne necessário.**
+**Usamos tudo que conhecemos que está pronto. Só fazemos código do zero se for estritamente necessário.**
 
-No spring temos varias classe utilitarias com Asserts.
+No Spring temos várias classes utilitárias como Asserts.
 
-``` java
-
+```java
 public class User {
 	private final String name;
 	private final String email;
@@ -129,56 +124,54 @@ public class User {
 		return password;
 	}
 }
-
 ```
-## Aula 22 - cdd
+## Aula 22 - CDD
 
-**Utilizamos o CDD Para facilitar o processo de medição e valiação de legibilidade.**
+**Utilizamos o CDD para facilitar o processo de medição e avaliação de legibilidade.**
 
-o CDD é reguar que mesura a complexidade do código, olhando o pesso cognitivo.
+O CDD é uma régua que mensura a complexidade do código, olhando o peso cognitivo.
 
-O tornar o processo mais automatizado.
+O objetivo é tornar o processo mais automatizado.
 
-é importante estabelecer um limite.
+É importante estabelecer um limite.
 
-### Definição de pesso cognitivo
+### Definição de peso cognitivo
 
-1. acoplamento com classe especificas de projeto - 1 icp
-2. conicionais - 1 icp
-3. blocos extras de código - 1 icp
+1. Acoplamento com classes específicas de projeto - 1 ICP
+2. Condicionais - 1 ICP
+3. Blocos extras de código - 1 ICP
 
 
-## aula 23 - praticas cdd
+## Aula 23 - Práticas CDD
 
 **Só alteramos estado de referências que criamos. Não mexemos nos objetos alheios. A não ser que esse objeto seja criado para isso.**
 
 
 Controle muito fino para alteração do estado do sistema.
 
-é importante sempre manter as validações, evite fazer acoplamento mental. então sempre faça validações. nunca mantenha um objeto com o estado inválido.
+É importante sempre manter as validações, evite fazer acoplamento mental. Então, sempre faça validações. Nunca mantenha um objeto com o estado inválido.
 
-no metodo adicionar pessoa, receber o convite ao invez da pessoa, pois somente adicionar pessoas que estão no convite. asssim obrigamos a passar o convite.
+No método adicionar pessoa, receber o convite ao invés da pessoa, pois somente adicionamos pessoas que estão no convite. Assim, obrigamos a passar o convite.
 
-usar o this duas 2vezes na mesma linha é um sinal de um smell que você ta alterando o estado de um objeto que não é seu.
+Usar o this duas vezes na mesma linha é um sinal de um smell que você está alterando o estado de um objeto que não é seu.
 
-no caso abaixo o convite alterar o estado de conta.
+No caso abaixo, o convite altera o estado de conta.
 
-para resolver isso, no ponto em esse metodo é chamado substiuir para que a propria conta adicione a pessoa. Ou seja, o propria conta vai adicionar alterar o estado dela.
+Para resolver isso, no ponto em que esse método é chamado, substituir para que a própria conta adicione a pessoa. Ou seja, a própria conta vai adicionar/alterar o estado dela.
 
 
 
-``` java
+```java
 // Entidade Convite
 public void transferePraConta(){
 	this.convite.getConta().adicionaPessoa(this);
 }
 ```
 
-``` java
+```java
+// Entidade Conta
 
-// Entitdade Conta
-
-public void adicionaPessoa( Convite conviteAceito) {
+public void adicionaPessoa(Convite conviteAceito) {
 	PessoaUsuaria novaPessoa = conviteAceito.getPessoa();
 
 	Assert.isTrue(!this.pessoas.contains(novaPessoa), "pessoa já existe");
@@ -187,18 +180,17 @@ public void adicionaPessoa( Convite conviteAceito) {
 }
 ```
 
-## Aula 24 - praticas cdd
+## Aula 24 - Práticas CDD
 
-**Teste automatizados devem ser derivados de maneira pragmática através das técnicas já conhecidas. Só depois de derivar casos padrões, usamos nossa criatividade para buscar extrapolar.**
+**Testes automatizados devem ser derivados de maneira pragmática através das técnicas já conhecidas. Só depois de derivar casos padrões, usamos nossa criatividade para buscar extrapolar.**
 
-criar o base padrões
+Criar os casos base padrões.
 
-no caso abaixo, seria um alterando cada if. seguir os fluxos de execução.
+No caso abaixo, seria alterando cada if. Seguir os fluxos de execução.
 
-``` java
-
+```java
 public class DiscountCalculator {
-	public double calculateDiscount(double salary, intyearsWorked, boolean hasMetTarget){
+	public double calculateDiscount(double salary, int yearsWorked, boolean hasMetTarget){
 		if(yearsWorked > 10 && hasMetTarget){
 			return salary * 0.15; //15%
 		}else if(yearsWorked > 5 && hasMetTarget){
@@ -210,6 +202,4 @@ public class DiscountCalculator {
 		}
 	}
 }
-
 ```
-
