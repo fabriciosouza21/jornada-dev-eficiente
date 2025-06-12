@@ -1,47 +1,46 @@
 # Qualidade
 
-## Reúso de código
+## Reúso de Código
 
-- A reutilização de código é uma das coisa mais difíceis de acerta
-  - Compartilha muit pouco significa repetição e bugs
-  - Compartilhar demais significa muito acoplamento
-- Crie biblioteca/frameworks para resolver problemas comuns, eles são mais independentes, tratar somente como um modulo separado pode gerar muitos problemas com coesão e acoplamento.
-- Quem é o dono.
+* A reutilização de código é uma das coisas mais difíceis de acertar:
 
-Aumenta o quantidade de dependencias entre os módulos, no caso de um módulos entre aplicações.
+  * Compartilhar muito pouco leva à repetição e a mais bugs
+  * Compartilhar demais gera acoplamento excessivo
+* Crie bibliotecas ou frameworks para resolver **problemas comuns** — eles tendem a ser mais independentes.
+  Tratar algo apenas como um "módulo separado" pode gerar **problemas de coesão e acoplamento**.
+* Defina claramente **quem é o dono** do código reutilizado
+* Aumentar a reutilização **entre módulos de diferentes aplicações** pode introduzir muitas dependências e dificultar a manutenção
 
-Sam Newman - livro de microserviços
+> **Referência:** Sam Newman — *Building Microservices*
+> *"Não reutilize código sem planejamento."*
 
-Não sai reutilizando código, sem planejamento
+## Dívida Técnica
 
-## Dívida técnica
+* Todo mundo tem — você **não é exceção**
+* Você não consegue tomar as melhores decisões quando **ainda entende pouco do problema**
+* A dívida técnica te torna **mais lento no longo prazo**
 
-- Todo mundo tem, você não é diferente
-- Você não pode tomar as melhores decisões quando sabe muito pouco sobre o problema
-- vai atrsá-lo no logo prazo
-- Problemas comuns
-  - Modularização ruim
-  - Teste ruins
-  - Sem documentação
-  - sem proprieadade clara
-  - Tecnologias antigas
-  - Tecnologias antiga
-  - Tecnologia interna
-- Lute contra o TD(Technical Debt) como parte do trabalho
-- Evite "refatoração big bang", mas tenha cuidado ao focar apenas nas coisa fáceis.
+### Problemas comuns:
 
-é simplemente natural que haja dívida técnica, o importante é como você lida com ela.
+* Modularização fraca
+* Testes frágeis ou inexistentes
+* Falta de documentação
+* Falta de ownership claro
+* Tecnologias obsoletas ou internas não mantidas
 
-a dívida técnica te torna mais lento para produzir código
+> A dívida técnica é inevitável. O importante é **como você lida com ela**.
 
-planos de teste e refatoração são essenciais para lidar com a dívida técnica
+* Lute contra o *Technical Debt (TD)* como parte do trabalho contínuo
+* Evite grandes refatorações do tipo "big bang"
+* Foco só no que é fácil pode esconder o que **realmente precisa ser resolvido**
+* **Planos de teste e ciclos de refatoração** são essenciais
 
 ## Testando
 
-**Teste rapidos** como prioridade.
+**Testes rápidos são prioridade.**
 
-
-- Esqueça os "Teste de unidade x integração"
-- Dividir para conquista é o único camianho a seguir
-- As suítes de teste devem fornece sinal e não ruidos (Flaky tests)
-- Teste de contrato
+* Esqueça a dicotomia *“teste de unidade vs. teste de integração”*
+* A abordagem deve ser **dividir para conquistar**
+* As suítes de testes devem fornecer **sinal**, não **ruído**
+  (Evite testes instáveis ou *flaky tests*)
+* **Teste de contrato** é essencial para sistemas distribuídos
