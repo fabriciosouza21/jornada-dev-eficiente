@@ -9,3 +9,5 @@ geralmente são solicitados pensando em problemas de algoritmos e estruturas de 
 Não se bitole com soluções perfeitas, tente chegar na solução do caso medio
 
 - [estruturas de dados](estrutura-dados.md)
+- [arvores](arvores.md)
+- [percurso](percurso.md)
