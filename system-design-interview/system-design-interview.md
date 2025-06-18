@@ -139,3 +139,24 @@ Um encurtador de URL é basicamente um serviço de chave-valor (token → URL) c
 - Aplicação consumidora altera o estado do estorno no banco de dados.
 
 ![alt text](image-4.png)
+
+
+## Dicas finais
+
+- A jornada é muito mais importante do que o resultado final.
+- Não começe a desenha o diagrama logo
+- começe com as peguntas
+- repetir as deciçoes tomadas, faça resumos
+- lembre de descurtir escalabilidade (filas, cache), segurança (rate limiting, autenticação), privacidade (criptografia, anonimização de dados)
+- Trade-offs de cada decisão
+  - pensar no ponto de vista de resiliência(o que acontece se um serviço falhar?)
+- principais soluções de escalabilidade horizontal
+  - serviços pequenos e separados
+  - utilizar filas para desacoplar serviços
+  - cache (cache hit ou cache miss)
+  - utilizar banco de dados não relacional
+  - utilizar sharding
+  - utilizar load balancer
+  - utilizar API Gateway
+  - rate limiting
+  - micronserviços independentes(fica mais facil de escalar)
