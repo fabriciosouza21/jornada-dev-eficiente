@@ -1,64 +1,45 @@
-# Estrutura de dados
+# Resumo: Estruturas de Dados
 
-## Arrays e matrizes
+## 📦 Arrays e Matrizes
 
-Sequencia de números inteiros, strings, matrizes, etc.
+- Sequência de elementos (números, strings, etc.)
+- **Acesso aleatório:** O(1)
+- **Adicionar/remover no fim:** O(1)
+- **Adicionar/remover no início:** O(n)
+- **Remover:** O(n)
 
-acesso a tempo contante O(1)
+## 🔗 Listas Ligadas (Linked Lists)
 
-acesso aleatório O(1)
+- Elementos ligados por ponteiros
+- **Acesso:** O(n)
+- **Adicionar no início/fim:** O(1)
+- **Adicionar/remover no meio:** O(n)
+- **Remover nó conhecido:** O(1)
+- **Buscar (contains):** O(n)
 
-## Arrays e linkedLists
+## 🧩 Sets
 
-### arrays list
+- Coleção sem duplicatas, baseada em hash
+- **Adicionar/remover/buscar:** O(1) (na média)
+- Implementação eficiente nas linguagens modernas
 
-- acesso e adicionar em tempo constante O(1)
-- adicinar no inicio é O(n), pois é necessário mover todos os elementos.
-- remover é o(n)
-- adicinar no fim é O(1)
+## 🗺️ Mapas/HashMaps
 
-### linked list
+- Estrutura de chave-valor baseada em hash
+- **Adicionar/remover/buscar:** O(1) (na média)
+- Muito usado para caches e buscas rápidas
 
-- acesso é O(n)
-- remover é O(n)
-- remove(node) é O(1) remover quando você ja tem o nó é constante
-- constains é O(n)
-- adicionar no começo e no final é O(1)
-- adicionar no meio é O(n)
+## 🥞 Pilhas (Stacks) e 🛤️ Filas (Queues)
 
-## Sets
+- **Pilha (Stack):** LIFO (Last In, First Out)
+- **Fila (Queue):** FIFO (First In, First Out)
+- **Inserir/remover:** O(1)
 
-utilizar a função de hash para garantir que não existam duplicatas.
+## ⚙️ Algoritmos
 
-O set geralmente vai funcinnar como uma função de hash que tem uma lista ligada, o contains vai depender da função de has, no geral não precisamos nos preucupar pois a linguagens de programação já implementa isso de forma eficiente.
+- **Complexidade de tempo:** O(1), O(n), O(log n), O(n log n)
+- **Complexidade de espaço:** Uso de memória
+- **Ordenação eficiente:** O(n log n) (ex: mergesort, heapsort)
 
-- contains é O(1)
-
-
-## HashMap
-
-utiliza uma função de hash para mapear chaves a valores.
-
-chave é valor é muito comum, cache(Map chave e valor)
-
-## Pilhas e filas
-
-Pilha first in last out (LIFO)
-Fila first in first out (FIFO)
-
-
-## Algoritmos
-
-Análise de algoritmos
-- complexidade
-- espaço
-
-
-ordenação é  nlogn
-
-
-analise de espaço
-
-intuição de quanto mémoria você vai utilizar
-
+---
 
