@@ -13,31 +13,33 @@ Cada percurso tem aplicações práticas diferentes e facilita operações como 
 ---
 
 ### Pseudocódigo para percurso em pré-ordem (pre-order)
-
+``` 
 Função preOrder(nó):
     se nó for nulo:
         retorne
     visite/processa o nó
     preOrder(nó.esquerda)
     preOrder(nó.direita)
+``` 
 
 ### Pseudocódigo para percurso em pós-ordem (post-order)
-
+``` 
 Função postOrder(nó):
     se nó for nulo:
         retorne
     postOrder(nó.esquerda)
     postOrder(nó.direita)
     visite/processa o nó
-
+```
 ### Pseudocódigo para percurso em ordem (in-order)
-
+``` 
 Função inOrder(nó):
     se nó for nulo:
         retorne
     inOrder(nó.esquerda)
     visite/processa o nó
     inOrder(nó.direita)
+``` 
 
 ---
 
