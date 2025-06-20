@@ -1,0 +1,4 @@
+# Trie
+
+Estrutura de dados
+
